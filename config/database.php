@@ -6,7 +6,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Default Database Connection Name
+    | Default Database MySqlConnection Name
     |--------------------------------------------------------------------------
     |
     | Here you may specify which of the database connections below you wish

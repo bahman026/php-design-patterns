@@ -10,9 +10,9 @@ class Authentication
     /**
      * @param UserProviderInterface $userProvider
      */
-    public function __construct(UserProviderInterface $userProvider)
+    public function __construct()
     {
-        $this->userProvider = $userProvider;
+        $this->userProvider = app()->make(UserProviderInterface::class);
     }
 
     public function check(string $username, string $password): bool

@@ -1,10 +1,10 @@
 <?php
 
-namespace Src\Solid\DIP;
+namespace Src\Solid\DIP\Connection;
 
 use Illuminate\Database\Eloquent\Collection;
 
-class Connection
+class MongoConnection implements ConnectionInterface
 {
     public function query(string $query, array $args): Collection
     {
