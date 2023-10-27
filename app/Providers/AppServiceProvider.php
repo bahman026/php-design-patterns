@@ -21,30 +21,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-
-//        App::bind(UserProviderInterface::class, function () {
-//            return new MongoUserProvider(new MongoConnection());
-//        });
-        App::bind(UserProviderInterface::class, function () {
-            return new RestApiUserProvider(new RestApiConnection());
-        });
-
-
-        $this->app->when(MongoUserProvider::class)
-            ->needs(ConnectionInterface::class)
-            ->give(MongoConnection::class);
-
-
-        $this->app->when(RestApiUserProvider::class)
-            ->needs(ConnectionInterface::class)
-            ->give(RestApiConnection::class);
-
-        $this->app->when(MySqlUserProvider::class)
-            ->needs(ConnectionInterface::class)
-            ->give(MySqlConnection::class);
-
-
-
     }
 
     /**
