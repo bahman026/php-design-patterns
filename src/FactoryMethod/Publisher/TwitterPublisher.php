@@ -1,18 +1,21 @@
 <?php
 
-namespace Src\FactoryMethod;
+namespace Src\FactoryMethod\Publisher;
 
-class InstagramPublisher implements PublisherInterface
+class TwitterPublisher implements PublisherInterface
 {
+
 
     /**
      * @param Message $message
      * @return void
      */
+
+//    business logic
     public function publish(Message $message): void
     {
         echo sprintf(
-            "instagram publisher %s - %s - %s",
+            "twitter publisher %s - %s - %s",
             $message->getTitle(),
             $message->getImage(),
             $message->getContent()

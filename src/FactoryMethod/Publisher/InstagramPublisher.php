@@ -1,10 +1,9 @@
 <?php
 
-namespace Src\FactoryMethod;
+namespace Src\FactoryMethod\Publisher;
 
-class TwitterPublisher implements PublisherInterface
+class InstagramPublisher implements PublisherInterface
 {
-
 
     /**
      * @param Message $message
@@ -13,7 +12,7 @@ class TwitterPublisher implements PublisherInterface
     public function publish(Message $message): void
     {
         echo sprintf(
-            "twitter publisher %s - %s - %s",
+            "instagram publisher %s - %s - %s",
             $message->getTitle(),
             $message->getImage(),
             $message->getContent()
