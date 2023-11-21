@@ -13,14 +13,28 @@ use Src\Solid\DIP\MySqlUserProvider;
 use Src\Solid\DIP\RestApiUserProvider;
 use Src\Solid\DIP\UserProviderInterface;
 
-class AuthConnectionProvider extends ServiceProvider
+class DipProvider extends ServiceProvider
 {
     /**
      * Register services.
      */
     public function register(): void
     {
+        App::bind(UserProviderInterface::class, function () {
+            return new RestApiUserProvider(new RestApiConnection());
+        });
 
+        $this->app->when(MongoUserProvider::class)
+            ->needs(ConnectionInterface::class)
+            ->give(MongoConnection::class);
+
+        $this->app->when(RestApiUserProvider::class)
+            ->needs(ConnectionInterface::class)
+            ->give(RestApiConnection::class);
+
+        $this->app->when(MySqlUserProvider::class)
+            ->needs(ConnectionInterface::class)
+            ->give(MySqlConnection::class);
     }
 
     /**

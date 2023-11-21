@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\ServiceProvider;
+use Src\FactoryMethod\LinkedinPublisherFactory;
+use Src\FactoryMethod\MessagePublisher;
 use Src\Solid\DIP\Authentication;
 use Src\Solid\DIP\Connection\ConnectionInterface;
 use Src\Solid\DIP\Connection\MongoConnection;
