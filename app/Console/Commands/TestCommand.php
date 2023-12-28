@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Src\Builder\RequestBuilder\RequestBuilder;
 use Src\FactoryMethod\Logger\Logger;
 use Src\FactoryMethod\Logger\LogMessage;
 use Src\FactoryMethod\Logger\TelegramApi;
@@ -41,5 +42,15 @@ class TestCommand extends Command
 //        this is for dip
         $auth = new Authentication();
         $auth->check('bahman', 'this is password');
+
+//        this is for builder
+        $request = RequestBuilder::forge()
+            ->withUri('https://example.com')
+            ->withMethod('GET')
+            ->withData([
+                'username' => "username",
+                'password' => "password",
+            ])->build();
+        $request->run();
     }
 }
