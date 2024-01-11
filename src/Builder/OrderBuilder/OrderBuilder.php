@@ -29,25 +29,48 @@ class OrderBuilder
     public function withCustomer($customer): OrderBuilder
     {
         $this->customer = $customer;
+        return $this;
     }
 
-    public function withTotalPrice($customer): OrderBuilder
+    public function withTotalPrice($totalPrice): OrderBuilder
     {
-        $this->customer = $customer;
+        $this->totalPrice = $totalPrice;
+        return $this;
     }
 
-    public function withFinalPrice($customer): OrderBuilder
+    public function withFinalPrice($finalPrice): OrderBuilder
     {
-        $this->customer = $customer;
+        $this->finalPrice = $finalPrice;
+        return $this;
     }
 
-    public function withDeliveryAddress($customer): OrderBuilder
+    public function withDeliveryAddress($deliveryAddress): OrderBuilder
     {
-        $this->customer = $customer;
+        $this->deliveryAddress = $deliveryAddress;
+        return $this;
     }
 
-    public function withOrderLines($customer): OrderBuilder
+    public function withOrderLines($orderLines): OrderBuilder
     {
-        $this->customer = $customer;
+        $this->orderLines = $orderLines;
+        return $this;
+    }
+
+    public function withStatus($status): OrderBuilder
+    {
+        $this->status = $status;
+        return $this;
+    }
+
+    public function build(): Order
+    {
+        return new Order(
+            $this->customer || $this->order->getCustomer(),
+            $this->totalPrice || $this->order->getTotalPrice(),
+            $this->finalPrice || $this->order->getFinalPrice(),
+            $this->deliveryAddress || $this->order->getDeliveryAddress(),
+            $this->orderLines || $this->order->getOrderLines(),
+            $this->status || $this->order->getStatus(),
+        );
     }
 }
