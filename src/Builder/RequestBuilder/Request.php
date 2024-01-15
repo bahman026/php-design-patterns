@@ -4,11 +4,11 @@ namespace Src\Builder\RequestBuilder;
 
 class Request
 {
-    private $uri;
-    private $data;
-    private $method;
-    private $headers;
-    private $agent;
+    private string $uri;
+    private string $data;
+    private string $method;
+    private string $headers;
+    private string $agent;
 
     public function __construct(RequestBuilder $builder)
     {
@@ -19,8 +19,13 @@ class Request
         $this->agent = $builder->getAgent();
     }
 
-    public function run()
+    public function run(): void
     {
+        $uri = $this->uri;
+        $method = $this->method;
+        $data = $this->data;
+        $headers = $this->headers;
+        $agent = $this->agent;
         $request = curl_init($this->uri);
 //        ...
     }

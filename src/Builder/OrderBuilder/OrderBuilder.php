@@ -4,16 +4,16 @@ namespace Src\Builder\OrderBuilder;
 
 class OrderBuilder
 {
-    private $customer;
-    private $totalPrice;
-    private $finalPrice;
-    private $deliveryAddress;
-    private $orderLines;
-    private $status;
-    private $order;
+    private string $customer;
+    private int $totalPrice;
+    private int $finalPrice;
+    private string $deliveryAddress;
+    private OrderLine $orderLines;
+    private int $status;
+    private ?Order $order;
 
     /**
-     * @param $order
+     * @param Order|null $order
      */
     public function __construct(?Order $order)
     {
@@ -26,37 +26,37 @@ class OrderBuilder
         return new OrderBuilder($order);
     }
 
-    public function withCustomer($customer): OrderBuilder
+    public function withCustomer(string $customer): OrderBuilder
     {
         $this->customer = $customer;
         return $this;
     }
 
-    public function withTotalPrice($totalPrice): OrderBuilder
+    public function withTotalPrice(int $totalPrice): OrderBuilder
     {
         $this->totalPrice = $totalPrice;
         return $this;
     }
 
-    public function withFinalPrice($finalPrice): OrderBuilder
+    public function withFinalPrice(int $finalPrice): OrderBuilder
     {
         $this->finalPrice = $finalPrice;
         return $this;
     }
 
-    public function withDeliveryAddress($deliveryAddress): OrderBuilder
+    public function withDeliveryAddress(string $deliveryAddress): OrderBuilder
     {
         $this->deliveryAddress = $deliveryAddress;
         return $this;
     }
 
-    public function withOrderLines($orderLines): OrderBuilder
+    public function withOrderLines(OrderLine $orderLines): OrderBuilder
     {
         $this->orderLines = $orderLines;
         return $this;
     }
 
-    public function withStatus($status): OrderBuilder
+    public function withStatus(int $status): OrderBuilder
     {
         $this->status = $status;
         return $this;

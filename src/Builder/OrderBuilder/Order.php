@@ -4,75 +4,68 @@ namespace Src\Builder\OrderBuilder;
 
 class Order
 {
-    private $customer;
-    private $totalPrice;
-    private $finalPrice;
-    private $deliveryAddress;
-    private $orderLines;
-    private $status;
-
     /**
-     * @param $customer
-     * @param $totalPrice
-     * @param $finalPrice
-     * @param $deliveryAddress
-     * @param $orderLines
-     * @param $status
+     * @param string $customer
+     * @param int $totalPrice
+     * @param int $finalPrice
+     * @param string $deliveryAddress
+     * @param OrderLine $orderLines
+     * @param int $status
      */
-    public function __construct($customer, $totalPrice, $finalPrice, $deliveryAddress, $orderLines, $status)
-    {
-        $this->customer = $customer;
-        $this->totalPrice = $totalPrice;
-        $this->finalPrice = $finalPrice;
-        $this->deliveryAddress = $deliveryAddress;
-        $this->orderLines = $orderLines;
-        $this->status = $status;
+    public function __construct(
+        private readonly string $customer,
+        private readonly int $totalPrice,
+        private readonly int $finalPrice,
+        private readonly string $deliveryAddress,
+        private readonly OrderLine $orderLines,
+        private readonly int $status,
+    ) {
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getCustomer()
+    public function getCustomer(): string
     {
         return $this->customer;
     }
 
     /**
-     * @return mixed
+     * @return int
      */
-    public function getTotalPrice()
+    public function getTotalPrice(): int
     {
         return $this->totalPrice;
     }
 
     /**
-     * @return mixed
+     * @return int
      */
-    public function getFinalPrice()
+    public function getFinalPrice(): int
     {
         return $this->finalPrice;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getDeliveryAddress()
+    public function getDeliveryAddress(): string
     {
         return $this->deliveryAddress;
     }
 
     /**
-     * @return mixed
+     * @return OrderLine
      */
-    public function getOrderLines()
+    public function getOrderLines(): OrderLine
     {
         return $this->orderLines;
     }
 
     /**
-     * @return mixed
+     * @return int
      */
-    public function getStatus()
+    public function getStatus(): int
     {
         return $this->status;
     }

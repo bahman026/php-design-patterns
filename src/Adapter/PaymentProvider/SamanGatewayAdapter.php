@@ -4,20 +4,16 @@ namespace Src\Adapter\PaymentProvider;
 
 class SamanGatewayAdapter implements OnlineGateway
 {
-
-    private $samanApi;
-
     /**
-     * @param $samanApi
+     * @param SamanBankGateway $samanApi
      */
-    public function __construct(SamanBankGateway $samanApi)
+    public function __construct(private readonly SamanBankGateway $samanApi)
     {
-        $this->samanApi = $samanApi;
     }
 
 
     public function startPay(Invoice $invoice): void
     {
-        $this->samanApi->pay($invoice->amount());
+        $this->samanApi->pay();
     }
 }

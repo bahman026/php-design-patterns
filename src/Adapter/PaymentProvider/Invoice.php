@@ -7,9 +7,9 @@ use http\Exception\InvalidArgumentException;
 class Invoice
 {
     /**
-     * @param $amount
+     * @param int $amount
      */
-    public function __construct(private $amount)
+    public function __construct(private readonly int $amount)
     {
         if ($amount <= 0) {
             throw new InvalidArgumentException('invalid argument');

@@ -34,7 +34,7 @@ class TestCommand extends Command
     /**
      * Execute the console command.
      */
-    public function handle()
+    public function handle(): void
     {
 //        this is for factory logger
         $log = new TelegramLoggerFactory();

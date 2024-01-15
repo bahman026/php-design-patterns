@@ -7,6 +7,6 @@ class SMSProvider implements SMSProviderInterface
     public function sendSms(): bool
     {
         // TODO: Implement sendSms() method.
+        return true;
     }
-
 }

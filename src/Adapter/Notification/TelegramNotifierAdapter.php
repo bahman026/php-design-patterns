@@ -4,22 +4,22 @@ namespace Src\Adapter\Notification;
 
 class TelegramNotifierAdapter implements NotifierInterface
 {
-    private $telegramAPI;
-    private $chatId;
+    private TelegramAPI $telegramAPI;
+    private string $chatId;
 
     /**
-     * @param $telegramAPI
-     * @param $cahtId
+     * @param TelegramAPI $telegramAPI
+     * @param string $chatId
      */
-    public function __construct(TelegramAPI $telegramAPI, $chatId)
+    public function __construct(TelegramAPI $telegramAPI, string $chatId)
     {
         $this->telegramAPI = $telegramAPI;
         $this->chatId = $chatId;
     }
 
-    public function send(string $message)
+    public function send(string $message): bool
     {
-        $this->telegramAPI->send($this->chatId, $message);
+        return $this->telegramAPI->send($this->chatId, $message);
         // TODO: Implement send() method.
     }
 }

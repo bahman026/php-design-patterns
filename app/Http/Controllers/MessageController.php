@@ -8,10 +8,10 @@ use Src\FactoryMethod\Publisher\MessagePublisher;
 
 class MessageController extends Controller
 {
-    private $publisher;
+    private MessagePublisher $publisher;
 
     /**
-     * @param $publisher
+     * @param MessagePublisher $publisher
      */
     public function __construct(MessagePublisher $publisher)
     {
@@ -26,6 +26,4 @@ class MessageController extends Controller
     {
         $this->publisher->publish(new Message('power', 'image-path', 'powerContent'));
     }
-
-
 }

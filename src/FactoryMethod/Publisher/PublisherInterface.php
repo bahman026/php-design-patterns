@@ -6,5 +6,5 @@ namespace Src\FactoryMethod\Publisher;
 interface PublisherInterface
 {
 //    product method
-    public function publish(Message $message);
+    public function publish(Message $message): void;
 }

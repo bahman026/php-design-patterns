@@ -8,8 +8,7 @@ use Src\Solid\DIP\Connection\MySqlConnection;
 
 class MongoUserProvider implements UserProviderInterface
 {
-
-    private $connection;
+    private MySqlConnection|ConnectionInterface $connection;
 
     /**
      * @param MySqlConnection $connection
@@ -20,15 +19,16 @@ class MongoUserProvider implements UserProviderInterface
     }
 
     /**
-     * @param string $user
+     * @param string $username
      * @return Collection
      */
     public function findUser(string $username): Collection
     {
-        dd('MongoUser');
+//        dd('MongoUser');
         $user = $this->connection->query("SELECT username FROM users where username LIKE ?", ['username' => $username]);
         if (!$user) {
             throw new \RuntimeException('invalid username');
         }
+        return $user;
     }
 }

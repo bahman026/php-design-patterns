@@ -2,13 +2,15 @@
 
 namespace Src\Solid\DIP;
 
+use Illuminate\Contracts\Container\BindingResolutionException;
+
 class Authentication
 {
-    private $userProvider;
+    private mixed $userProvider;
 
 
     /**
-     * @param UserProviderInterface $userProvider
+     * @throws BindingResolutionException
      */
     public function __construct()
     {

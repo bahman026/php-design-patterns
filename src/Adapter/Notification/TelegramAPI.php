@@ -4,7 +4,13 @@ namespace Src\Adapter\Notification;
 
 class TelegramAPI
 {
-    public function send(int $chatId, string $message)
+    /**
+     * @param string $chatId
+     * @param string $message
+     * @return bool
+     */
+    public function send(string $chatId, string $message): bool
     {
+        return true;
     }
 }

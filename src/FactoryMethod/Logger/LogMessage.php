@@ -4,27 +4,18 @@ namespace Src\FactoryMethod\Logger;
 
 class LogMessage
 {
-
-    private $content;
-
     /**
-     * @param $content
+     * @param string $content
      */
-    public function __construct($content)
+    public function __construct(private readonly string $content)
     {
-        $this->content = $content;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getContent()
+    public function getContent(): string
     {
         return $this->content;
     }
-
-
-
-
-
 }

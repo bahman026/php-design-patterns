@@ -15,8 +15,9 @@ class TelegramLogger implements Logger
     }
 
 
-    public function log(LogMessage $message)
+    public function log(LogMessage $message): void
     {
+        $telegramApi = $this->telegramApi;
         // TODO: Implement log() method.
     }
 }

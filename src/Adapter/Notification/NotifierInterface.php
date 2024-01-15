@@ -4,5 +4,5 @@ namespace Src\Adapter\Notification;
 
 interface NotifierInterface
 {
-    public function send(string $message);
+    public function send(string $message): bool;
 }

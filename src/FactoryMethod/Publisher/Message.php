@@ -4,45 +4,39 @@ namespace Src\FactoryMethod\Publisher;
 
 class Message
 {
-    private $title;
-    private $image;
-    private $content;
-
     /**
-     * @param $title
-     * @param $image
-     * @param $content
+     * @param string $title
+     * @param string $image
+     * @param string $content
      */
-    public function __construct($title, $image, $content)
-    {
-        $this->title = $title;
-        $this->image = $image;
-        $this->content = $content;
+    public function __construct(
+        private readonly string $title,
+        private readonly string $image,
+        private readonly string $content,
+    ) {
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->title;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getImage()
+    public function getImage(): string
     {
         return $this->image;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getContent()
+    public function getContent(): string
     {
         return $this->content;
     }
-
-
 }

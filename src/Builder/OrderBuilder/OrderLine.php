@@ -4,42 +4,38 @@ namespace Src\Builder\OrderBuilder;
 
 class OrderLine
 {
-    private $orderName;
-    private $count;
-    private $price;
-
     /**
-     * @param $orderName
-     * @param $count
-     * @param $price
+     * @param string $orderName
+     * @param int $count
+     * @param int $price
      */
-    public function __construct($orderName, $count, $price)
-    {
-        $this->orderName = $orderName;
-        $this->count = $count;
-        $this->price = $price;
+    public function __construct(
+        private readonly string $orderName,
+        private readonly int $count,
+        private readonly int $price,
+    ) {
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getOrderName()
+    public function getOrderName(): string
     {
         return $this->orderName;
     }
 
     /**
-     * @return mixed
+     * @return int
      */
-    public function getCount()
+    public function getCount(): int
     {
         return $this->count;
     }
 
     /**
-     * @return mixed
+     * @return int
      */
-    public function getPrice()
+    public function getPrice(): int
     {
         return $this->price;
     }

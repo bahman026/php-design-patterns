@@ -4,17 +4,15 @@ namespace Src\Adapter\PaymentProvider;
 
 class SamanBankGateway
 {
-    private $apiKey;
-
     /**
-     * @param $apiKey
+     * @param string $apiKey
      */
-    public function __construct($apiKey)
+    public function __construct(private readonly string $apiKey)
     {
-        $this->apiKey = $apiKey;
     }
 
     public function pay(): void
     {
+        echo "apiKey" . $this->apiKey;
     }
 }

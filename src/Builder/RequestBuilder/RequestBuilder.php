@@ -4,11 +4,11 @@ namespace Src\Builder\RequestBuilder;
 
 class RequestBuilder
 {
-    private $uri;
-    private $data;
-    private $method;
-    private $headers;
-    private $agent;
+    private string $uri;
+    private array $data;
+    private string $method;
+    private string $headers;
+    private string $agent;
 
     public static function forge(): RequestBuilder
     {
@@ -21,13 +21,21 @@ class RequestBuilder
         return $this;
     }
 
+    /**
+     * @param array<string> $data
+     * @return $this
+     */
     public function withData(array $data): RequestBuilder
     {
         $this->data = $data;
         return $this;
     }
 
-    public function withHeaders(array $headers): RequestBuilder
+    /**
+     * @param string $headers
+     * @return $this
+     */
+    public function withHeaders(string $headers): RequestBuilder
     {
         $this->headers = $headers;
         return $this;

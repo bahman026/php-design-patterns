@@ -7,7 +7,7 @@ use Src\Solid\DIP\Connection\ConnectionInterface;
 
 class MySqlUserProvider implements UserProviderInterface
 {
-    private $connection;
+    private ConnectionInterface $connection;
 
     /**
      * @param ConnectionInterface $connection
@@ -18,15 +18,16 @@ class MySqlUserProvider implements UserProviderInterface
     }
 
     /**
-     * @param string $user
+     * @param string $username
      * @return Collection
      */
     public function findUser(string $username): Collection
     {
-        dd('mysqlUser');
+//        dd('mysqlUser');
         $user = $this->connection->query("SELECT username FROM users where username LIKE ?", ['username' => $username]);
         if (!$user) {
             throw new \RuntimeException('invalid username');
         }
+        return $user;
     }
 }
