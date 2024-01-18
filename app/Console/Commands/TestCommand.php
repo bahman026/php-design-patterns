@@ -31,11 +31,28 @@ class TestCommand extends Command
      */
     protected $description = 'Command description';
 
+//    function foo($item)
+//    {
+//        return $item;
+//    }
+
+    public function arrayMap(array $array, callable $func): array
+    {
+        foreach ($array as $key => $item) {
+            $array[$key] = call_user_func($func, $item);
+        }
+        return $array;
+    }
+
     /**
      * Execute the console command.
      */
     public function handle(): void
     {
+        $array = [1, 2, 3];
+        dd($this->arrayMap($array, function ($item) {
+            return $item + 5;
+        }));
 //        this is for factory logger
         $log = new TelegramLoggerFactory();
         $message = new LogMessage("test");

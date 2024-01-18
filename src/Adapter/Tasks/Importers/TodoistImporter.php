@@ -16,6 +16,16 @@ class TodoistImporter implements TaskImporter
 
     public function import(): array
     {
+        $test = true;
+
+        $var = $test && (function () {
+                return "Test";
+        })();
+
+
+        {
+
+        }
         $task = $this->todolsitAPI->fetchTasks(0, 0);
         return collect($task)->map(function (TodoistTask $task) {
             return new Task($task->getName(), '', TaskStatus::INIT->value);
