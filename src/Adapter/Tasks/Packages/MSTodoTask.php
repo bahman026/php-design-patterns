@@ -8,8 +8,7 @@ class MSTodoTask
         private readonly string $title,
         private readonly string $content,
         private readonly int $status,
-    ) {
-    }
+    ) {}
 
     public function getTitle(): string
     {

@@ -2,9 +2,7 @@
 
 namespace Src\Solid\LSP;
 
-use Faker\Core\File;
-
-class DropBoxFile implements DownloadableFileInterface, FileInterface, EncodeableFileInterface
+class DropBoxFile implements DownloadableFileInterface, EncodeableFileInterface, FileInterface
 {
     public function rename(): bool
     {

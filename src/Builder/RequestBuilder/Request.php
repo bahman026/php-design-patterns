@@ -5,9 +5,13 @@ namespace Src\Builder\RequestBuilder;
 class Request
 {
     private string $uri;
+
     private string $data;
+
     private string $method;
+
     private string $headers;
+
     private string $agent;
 
     public function __construct(RequestBuilder $builder)
@@ -27,6 +31,6 @@ class Request
         $headers = $this->headers;
         $agent = $this->agent;
         $request = curl_init($this->uri);
-//        ...
+        //        ...
     }
 }

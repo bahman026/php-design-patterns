@@ -4,5 +4,5 @@ namespace Src\Bridge\CampaignManager;
 
 interface Promotion
 {
-    public function display();
+    public function display(): string;
 }

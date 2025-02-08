@@ -6,7 +6,7 @@ use Src\Bridge\SurveyModule\Presentation;
 
 class StandalonePresentation implements Presentation
 {
-    public function present()
+    public function present(): void
     {
         // TODO: Implement present() method.
     }

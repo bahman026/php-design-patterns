@@ -1,10 +1,9 @@
 <?php
 
-namespace Src\FactoryMethod\Account;
+namespace Src\Creational\FactoryMethod\Account;
 
 class VIPAccount implements Account
 {
-
     public function interestRate(): float
     {
         return 0.23;

@@ -8,26 +8,29 @@ class ProjectTask implements ProjectComponent
         private readonly string $title,
         private readonly string $description,
         private readonly int $status,
-    ) {
-    }
+    ) {}
 
-    public function done()
+    public function done(): mixed
     {
         // TODO: Implement done() method.
+        return [$this->status, $this->title, $this->description];
     }
 
-    public function duplicate()
+    public function duplicate(): mixed
     {
         // TODO: Implement duplicate() method.
+        return true;
     }
 
-    public function delete()
+    public function delete(): mixed
     {
         // TODO: Implement delete() method.
+        return true;
     }
 
-    public function move()
+    public function move(): mixed
     {
         // TODO: Implement move() method.
+        return true;
     }
 }

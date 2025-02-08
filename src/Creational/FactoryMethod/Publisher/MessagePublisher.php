@@ -1,8 +1,11 @@
 <?php
 
-namespace Src\FactoryMethod\Publisher;
+namespace Src\Creational\FactoryMethod\Publisher;
 
 // this is creator interface
+
+use Src\Creational\FactoryMethod\Publisher\Interface\PublisherInterface;
+
 abstract class MessagePublisher
 {
     public function publish(Message $message): void
@@ -11,6 +14,6 @@ abstract class MessagePublisher
         $publisher->publish($message);
     }
 
-//    factory method
+    //    factory method
     abstract protected function createPublisher(): PublisherInterface;
 }

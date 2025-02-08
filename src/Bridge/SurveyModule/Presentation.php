@@ -4,5 +4,5 @@ namespace Src\Bridge\SurveyModule;
 
 interface Presentation
 {
-    public function present();
+    public function present(): void;
 }

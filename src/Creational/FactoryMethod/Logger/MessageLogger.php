@@ -1,8 +1,9 @@
 <?php
 
-namespace Src\FactoryMethod\Logger;
+namespace Src\Creational\FactoryMethod\Logger;
 
-//this is creator class (main)
+// this is creator class (main)
+
 abstract class MessageLogger
 {
     public function log(LogMessage $message): void
@@ -12,5 +13,4 @@ abstract class MessageLogger
     }
 
     abstract protected function createLogger(): Logger;
-
 }

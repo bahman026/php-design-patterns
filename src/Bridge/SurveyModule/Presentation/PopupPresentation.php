@@ -6,8 +6,7 @@ use Src\Bridge\SurveyModule\Presentation;
 
 class PopupPresentation implements Presentation
 {
-
-    public function present()
+    public function present(): void
     {
         // TODO: Implement present() method.
     }

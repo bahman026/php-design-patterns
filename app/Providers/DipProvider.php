@@ -21,7 +21,7 @@ class DipProvider extends ServiceProvider
     public function register(): void
     {
         App::bind(UserProviderInterface::class, function () {
-            return new RestApiUserProvider(new RestApiConnection());
+            return new RestApiUserProvider(new RestApiConnection);
         });
 
         $this->app->when(MongoUserProvider::class)

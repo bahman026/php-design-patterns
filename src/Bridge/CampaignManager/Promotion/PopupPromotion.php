@@ -9,8 +9,7 @@ class PopupPromotion implements Promotion
     public function __construct(
         private readonly string $bannerUrl,
         private readonly string $url,
-    ) {
-    }
+    ) {}
 
     public function display(): string
     {

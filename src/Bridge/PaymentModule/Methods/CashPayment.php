@@ -7,9 +7,9 @@ use Src\Bridge\PaymentModule\PaymentMethod;
 
 class CashPayment extends PaymentMethod
 {
-    public function startPay(Invoice $invoice)
+    public function startPay(Invoice $invoice): void
     {
-//         cash payment task
+        //         cash payment task
         $this->handler->pay($invoice);
     }
 }

@@ -7,9 +7,9 @@ use Src\Bridge\PaymentModule\PaymentMethod;
 
 class ChequePayment extends PaymentMethod
 {
-    public function startPay(Invoice $invoice)
+    public function startPay(Invoice $invoice): void
     {
-//        cheque pay tasks
+        //        cheque pay tasks
         $this->handler->pay($invoice);
     }
 }

@@ -9,25 +9,20 @@ class RestApiUserProvider implements UserProviderInterface
 {
     private ConnectionInterface $connection;
 
-    /**
-     * @param ConnectionInterface $connection
-     */
     public function __construct(ConnectionInterface $connection)
     {
         $this->connection = $connection;
     }
 
-    /**
-     * @param string $username
-     * @return Collection
-     */
     public function findUser(string $username): Collection
     {
-//        dd('restApiUser');
-        $user = $this->connection->query("SELECT username FROM users where username LIKE ?", ['username' => $username]);
-        if (!$user) {
+        $user = $this->connection->query('SELECT username FROM users where username LIKE ?', ['username' => $username]);
+
+        /** @phpstan-ignore-next-line */
+        if (! $user) {
             throw new \RuntimeException('invalid username');
         }
+
         return $user;
     }
 }

@@ -1,19 +1,15 @@
 <?php
 
-namespace Src\FactoryMethod\Logger;
+namespace Src\Creational\FactoryMethod\Logger;
 
 class TelegramLogger implements Logger
 {
     private TelegramApi $telegramApi;
 
-    /**
-     * @param $telegramApi
-     */
     public function __construct(TelegramApi $telegramApi)
     {
         $this->telegramApi = $telegramApi;
     }
-
 
     public function log(LogMessage $message): void
     {

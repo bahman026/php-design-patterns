@@ -1,8 +1,9 @@
 <?php
 
-namespace Src\FactoryMethod\Logger;
+namespace Src\Creational\FactoryMethod\Logger;
 
-//this is product
+// this is product
+
 interface Logger
 {
     public function log(LogMessage $message): void;

@@ -9,7 +9,7 @@ class MSTodoAPI
     public function getTasks(): array
     {
         return [
-            new MSTodoTask('title', 'content', TaskStatus::DONE->value)
+            new MSTodoTask('title', 'content', TaskStatus::DONE->value),
         ];
     }
 }

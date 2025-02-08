@@ -4,5 +4,5 @@ namespace Src\Composite\MenuComponent;
 
 interface MenuComponent
 {
-    public function build();
+    public function build(): void;
 }

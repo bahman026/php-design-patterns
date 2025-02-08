@@ -2,6 +2,4 @@
 
 namespace Src\Solid\ISP;
 
-interface NotifierInterface
-{
-}
+interface NotifierInterface {}

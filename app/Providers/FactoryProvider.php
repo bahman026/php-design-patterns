@@ -3,10 +3,10 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Src\FactoryMethod\Account\AccountCreator;
-use Src\FactoryMethod\Account\GeneralAccountFactory;
-use Src\FactoryMethod\Publisher\LinkedinPublisherFactory;
-use Src\FactoryMethod\Publisher\MessagePublisher;
+use Src\Creational\FactoryMethod\Account\AccountCreator;
+use Src\Creational\FactoryMethod\Account\GeneralAccountFactory;
+use Src\Creational\FactoryMethod\Publisher\Factory\LinkedinPublisherFactory;
+use Src\Creational\FactoryMethod\Publisher\MessagePublisher;
 
 class FactoryProvider extends ServiceProvider
 {

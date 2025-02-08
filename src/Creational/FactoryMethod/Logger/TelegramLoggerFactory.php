@@ -1,12 +1,11 @@
 <?php
 
-namespace Src\FactoryMethod\Logger;
+namespace Src\Creational\FactoryMethod\Logger;
 
 class TelegramLoggerFactory extends MessageLogger
 {
-
     protected function createLogger(): Logger
     {
-        return new TelegramLogger(new TelegramApi());
+        return new TelegramLogger(new TelegramApi);
     }
 }

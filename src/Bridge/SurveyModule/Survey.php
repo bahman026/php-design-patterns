@@ -4,9 +4,7 @@ namespace Src\Bridge\SurveyModule;
 
 abstract class Survey
 {
-    public function __construct(protected readonly Presentation $mode)
-    {
-    }
+    public function __construct(protected readonly Presentation $mode) {}
 
-    abstract public function display();
+    abstract public function display(): void;
 }

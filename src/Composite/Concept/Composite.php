@@ -11,10 +11,7 @@ class Composite implements Component
         $this->components[] = $component;
     }
 
-    /**
-     * @return void
-     */
-    public function operation()
+    public function operation(): void
     {
         foreach ($this->components as $component) {
             $component->operation();

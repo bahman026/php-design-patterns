@@ -7,8 +7,7 @@ class TodoistTask
     public function __construct(
         private readonly string $name,
         private readonly string $create_at,
-    ) {
-    }
+    ) {}
 
     public function getName(): string
     {

@@ -16,9 +16,9 @@ class OnlinePayment extends PaymentMethod
         parent::__construct($this->paymentHandler);
     }
 
-    public function startPay(Invoice $invoice)
+    public function startPay(Invoice $invoice): void
     {
-        $this->connection->insert("INSERT INTO paymentsZ");
+        $this->connection->insert('INSERT INTO paymentsZ');
         $this->handler->pay($invoice);
     }
 }

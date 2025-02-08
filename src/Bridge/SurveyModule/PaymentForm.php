@@ -12,8 +12,9 @@ class PaymentForm extends Survey
         parent::__construct($this->presentation);
     }
 
-    public function display()
+    public function display(): void
     {
         // TODO: Implement display() method.
+        echo $this->price.$this->title;
     }
 }

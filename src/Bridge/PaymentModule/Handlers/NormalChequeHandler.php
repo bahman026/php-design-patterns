@@ -7,8 +7,7 @@ use Src\Bridge\PaymentModule\PaymentHandler;
 
 class NormalChequeHandler implements PaymentHandler
 {
-
-    public function pay(Invoice $invoice)
+    public function pay(Invoice $invoice): void
     {
         // TODO: Implement pay() method.
     }

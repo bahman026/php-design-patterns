@@ -1,18 +1,15 @@
 <?php
 
-namespace Src\FactoryMethod\Publisher;
+namespace Src\Creational\FactoryMethod\Publisher;
+
+use Src\Creational\FactoryMethod\Publisher\Interface\PublisherInterface;
 
 class InstagramPublisher implements PublisherInterface
 {
-
-    /**
-     * @param Message $message
-     * @return void
-     */
     public function publish(Message $message): void
     {
         echo sprintf(
-            "instagram publisher %s - %s - %s",
+            'instagram publisher %s - %s - %s',
             $message->getTitle(),
             $message->getImage(),
             $message->getContent()

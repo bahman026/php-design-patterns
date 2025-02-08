@@ -7,8 +7,7 @@ class TextPromotion
     public function __construct(
         private readonly string $title,
         private readonly string $url,
-    ) {
-    }
+    ) {}
 
     public function display(): string
     {

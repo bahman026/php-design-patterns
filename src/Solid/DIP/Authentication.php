@@ -8,7 +8,6 @@ class Authentication
 {
     private mixed $userProvider;
 
-
     /**
      * @throws BindingResolutionException
      */
@@ -20,10 +19,10 @@ class Authentication
     public function check(string $username, string $password): bool
     {
         $user = $this->userProvider->findUser($username);
-        if (!$user) {
+        if (! $user) {
             throw new \RuntimeException('invalid username');
         }
+
         return true;
     }
-
 }

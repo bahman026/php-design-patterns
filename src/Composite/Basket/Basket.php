@@ -17,6 +17,7 @@ class Basket
         foreach ($this->items as $productItem) {
             $total += $productItem->price();
         }
+
         return $total;
     }
 }

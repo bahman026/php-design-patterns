@@ -6,7 +6,7 @@ use Src\Bridge\SurveyModule\Presentation;
 
 class InlinePresentation implements Presentation
 {
-    public function present()
+    public function present(): void
     {
         // TODO: Implement present() method.
     }

@@ -5,12 +5,9 @@ namespace Src\Adapter\Notification;
 class TelegramNotifierAdapter implements NotifierInterface
 {
     private TelegramAPI $telegramAPI;
+
     private string $chatId;
 
-    /**
-     * @param TelegramAPI $telegramAPI
-     * @param string $chatId
-     */
     public function __construct(TelegramAPI $telegramAPI, string $chatId)
     {
         $this->telegramAPI = $telegramAPI;

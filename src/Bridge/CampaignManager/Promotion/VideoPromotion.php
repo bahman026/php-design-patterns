@@ -9,8 +9,7 @@ class VideoPromotion implements Promotion
     public function __construct(
         private readonly string $title,
         private readonly string $videoUrl,
-    ) {
-    }
+    ) {}
 
     public function display(): string
     {

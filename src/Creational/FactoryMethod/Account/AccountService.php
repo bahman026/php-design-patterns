@@ -1,6 +1,6 @@
 <?php
 
-namespace Src\FactoryMethod\Account;
+namespace Src\Creational\FactoryMethod\Account;
 
 use App\Models\User;
 

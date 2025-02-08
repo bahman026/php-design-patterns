@@ -1,10 +1,9 @@
 <?php
 
-namespace Src\FactoryMethod\Account;
+namespace Src\Creational\FactoryMethod\Account;
 
 class GoldAccount implements Account
 {
-
     public function interestRate(): float
     {
         return 0.25;

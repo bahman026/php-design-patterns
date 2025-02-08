@@ -4,7 +4,6 @@ namespace Src\Composite\Concept;
 
 class Client
 {
-    public function __construct(private readonly Component $component)
-    {
-    }
+    /** @phpstan-ignore-next-line */
+    public function __construct(private readonly Component $component) {}
 }

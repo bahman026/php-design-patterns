@@ -7,8 +7,7 @@ class MenuItem implements MenuComponent
     public function __construct(
         private readonly string $title,
         private readonly string $url,
-    ) {
-    }
+    ) {}
 
     public function build(): void
     {

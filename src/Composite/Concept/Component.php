@@ -4,5 +4,5 @@ namespace Src\Composite\Concept;
 
 interface Component
 {
-    public function operation();
+    public function operation(): void;
 }

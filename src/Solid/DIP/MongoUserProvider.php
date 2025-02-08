@@ -11,24 +11,23 @@ class MongoUserProvider implements UserProviderInterface
     private MySqlConnection|ConnectionInterface $connection;
 
     /**
-     * @param MySqlConnection $connection
+     * @param  MySqlConnection  $connection
      */
     public function __construct(ConnectionInterface $connection)
     {
         $this->connection = $connection;
     }
 
-    /**
-     * @param string $username
-     * @return Collection
-     */
     public function findUser(string $username): Collection
     {
-//        dd('MongoUser');
-        $user = $this->connection->query("SELECT username FROM users where username LIKE ?", ['username' => $username]);
-        if (!$user) {
+        //        dd('MongoUser');
+        $user = $this->connection->query('SELECT username FROM users where username LIKE ?', ['username' => $username]);
+
+        /** @phpstan-ignore-next-line */
+        if (! $user) {
             throw new \RuntimeException('invalid username');
         }
+
         return $user;
     }
 }

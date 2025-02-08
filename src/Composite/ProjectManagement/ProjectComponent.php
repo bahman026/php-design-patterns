@@ -4,11 +4,11 @@ namespace Src\Composite\ProjectManagement;
 
 interface ProjectComponent
 {
-    public function done();
+    public function done(): mixed;
 
-    public function duplicate();
+    public function duplicate(): mixed;
 
-    public function delete();
+    public function delete(): mixed;
 
-    public function move();
+    public function move(): mixed;
 }

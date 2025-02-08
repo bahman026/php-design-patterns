@@ -10,8 +10,7 @@ class BannerPromotion implements Promotion
         private readonly string $title,
         private readonly string $url,
         private readonly string $bannerUrl,
-    ) {
-    }
+    ) {}
 
     public function display(): string
     {

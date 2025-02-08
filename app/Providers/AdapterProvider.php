@@ -15,7 +15,7 @@ class AdapterProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->bind(NotifierInterface::class, function ($app) {
-            return new TelegramNotifierAdapter(new TelegramAPI(), 'chatId');
+            return new TelegramNotifierAdapter(new TelegramAPI, 'chatId');
         });
     }
 
