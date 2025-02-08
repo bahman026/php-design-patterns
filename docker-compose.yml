@@ -1,0 +1,20 @@
+services:
+    app:
+        build:
+          args:
+            gid: ${GROUP_ID}
+            uid: ${USER_ID}
+          context: ./
+          dockerfile: Dockerfile
+        image: ${CONTAINER_NAME}
+        container_name: ${CONTAINER_NAME}_app
+        restart: unless-stopped
+        working_dir: /var/www/html
+        volumes:
+            - ./:/var/www/html
+        networks:
+            - net
+
+networks:
+    net:
+        driver: bridge
